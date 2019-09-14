@@ -7,19 +7,22 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css", :rel => "stylesheet"}/
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=", :src => "https://code.jquery.com/jquery-3.4.1.js"}
   .body
-    .header
-      .header__blog
-        Blog
-      .header__right
-        - if user_signed_in?
-          .header__right__signout
-            = link_to "SignOut", destroy_user_session_path, method: :delete
-          .header__right__new
-            %a.post{:href => "/blogs/new"} New
-        - else
-          .header__right__signin
-            = link_to "SignIn", new_user_session_path, class: 'post'
-          .header__right__registration
-            = link_to "新規登録", new_user_registration_path, class: 'post'
+    .header.cyan.accent-1
+      .nav-wrapper
+        .a.brand-logo{:href => "#"} Blog
+        .ul#nav-mobile.right.hide-on-med-and-down
+          - if user_signed_in?
+            .li
+              = link_to "SignOut", destroy_user_session_path, method: :delete
+            .li
+              %a{:href => "/blogs/new"} New
+          - else
+            .li
+              = link_to "SignIn", new_user_session_path, class: 'post'
+            .li
+              = link_to "新規登録", new_user_registration_path, class: 'post'
     = yield

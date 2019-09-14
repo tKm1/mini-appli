@@ -1,34 +1,19 @@
 .header {
   height: 120px;
   width: 100%;
-  line-height: 120px;
-  background-color: lime;
-  color: teal;
+  line-height: 60px;
   margin: 0;
   padding: 0;
-  &__blog {
-    font-size: 60px;
-    font-weight: bold;
-    float: left;
-    padding-left: 60px;
-  }
-  &__right {
-    float: right;
-    padding-right: 60px;
+  .nav-wrapper {
+    padding-left: 20px;
     font-size: 24px;
-    &__signin {
-      float: left;
-      padding: 0 20px;
-    }
-    &__registration {
-      float: left;
-      padding: 0 20px;
-    }
-    &__signout {
-      float: left;
-      padding: 0 20px;
-    }
-    &__new {
+    float: left;
+    width: 100%;
+  }
+  .ul {
+    font-size: 16px;
+    float: right;
+    .li {
       float: left;
       padding: 0 20px;
     }
@@ -36,24 +21,23 @@
 }
 
 .body {
-  height: calc(100vh - 120px);
   width: 100%;
   margin: 0;
   padding: 0;
   &__contents {
-    background-color: limegreen;
+    background-color: #0091ea;
     margin: 60px auto;
     height: 130px;
     width: 800px;
     &__text {
-      color: teal;
+      color: black;
       font-size: 20px;
       line-height: 100px;
       padding-left: 30px;
       float: left;
     }
     &__edit {
-      background-color: teal;
+      background-color: black;
       color: white;
       font-size: 30px;
       height: 60px;
@@ -64,7 +48,7 @@
       text-align: center;
     }
     &__destroy {
-      background-color: teal;
+      background-color: black;
       color: white;
       font-size: 30px;
       height: 60px;
@@ -79,5 +63,4 @@
 
 .footer {
   text-align: center;
-  color: green;
 }

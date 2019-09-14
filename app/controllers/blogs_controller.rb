@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @blogs = Blog.all.order("created_at DESC").page(params[:page]).per(4)
+    @blogs = Blog.all.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new
