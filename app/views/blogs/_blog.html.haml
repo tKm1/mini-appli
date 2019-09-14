@@ -1,0 +1,9 @@
+.body__contents
+  .body__contents__text
+    = blog.text
+  .body__contents__destroy
+    = link_to "/blogs/#{blog.id}", method: :delete do
+      = fa_icon 'trash-o'
+  .body__contents__edit
+    = link_to "/blogs/#{blog.id}/edit", method: :get do
+      = fa_icon 'pencil-square-o'

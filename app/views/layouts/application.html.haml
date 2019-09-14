@@ -1,0 +1,25 @@
+!!!
+.html
+  .head
+    .meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title MiniAppli
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  .body
+    .header
+      .header__blog
+        Blog
+      .header__right
+        - if user_signed_in?
+          .header__right__signout
+            = link_to "SignOut", destroy_user_session_path, method: :delete
+          .header__right__new
+            %a.post{:href => "/blogs/new"} New
+        - else
+          .header__right__signin
+            = link_to "SignIn", new_user_session_path, class: 'post'
+          .header__right__registration
+            = link_to "新規登録", new_user_registration_path, class: 'post'
+    = yield
