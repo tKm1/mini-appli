@@ -7,6 +7,7 @@ class BlogsController < ApplicationController
   end
 
   def new
+    @blog = Blog.new
   end
 
   def create
@@ -24,16 +25,12 @@ class BlogsController < ApplicationController
 
   def update
     blog = Blog.find(params[:id])
-  end
-
-  def update
-    blog = Blog.find(params[:id])
     blog.update(blog_params)
   end
 
   private
   def blog_params
-    params.permit(:text)
+    params.require(:blog).permit(:text)
   end
 
   def move_to_index

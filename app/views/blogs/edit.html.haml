@@ -1,7 +1,12 @@
 .contents.row
-  = form_tag("/blogs/#{@blog.id}", method: :patch ) do
-    %h3
-      編集する
-    %input{:type => "text"}/
-    %textarea{:cols => "30", :name => "text", :placeholder => "", :rows => "10"}= @blog.text
-    %input{:type => "submit", :value => "SENT"}/
+  = form_for(@blog) do |f|
+    %p
+    ブログを編集する
+    = f.text_area :text
+    = f.submit "SENT"
+
+-# %h3
+-#   編集する
+-# %input{:type => "text"}/
+-# %textarea{:cols => "30", :name => "text", :placeholder => "", :rows => "10"}= @blog.text
+-# %input{:type => "submit", :value => "SENT"}/

@@ -1,6 +1,12 @@
 .contents.row
-  = form_tag('/blogs', method: :post) do
+  = form_for(@blog) do |f|
     %p
-      ブログを投稿する
-    %textarea{:cols => "60", :name => "text", :placeholder => "ブログを書こう！", :rows => "3"}
-    %input{:type => "submit", :value => "送信"}/
+    ブログを投稿する
+    = f.text_area :text, placeholder: "ブログを書こう！"
+    = f.submit "SENT"
+
+-# = form_tag('/blogs', method: :post) do
+  -# %p
+  -#   ブログを投稿する
+  -# %textarea{:cols => "60", :name => "text", :placeholder => "ブログを書こう！", :rows => "3"}
+  -# %input{:type => "submit", :value => "送信"}/
