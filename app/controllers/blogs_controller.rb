@@ -15,6 +15,7 @@ class BlogsController < ApplicationController
 
   def destroy
     blog = Blog.find(params[:id])
+    blog.destroy
   end
 
   def edit
@@ -23,6 +24,11 @@ class BlogsController < ApplicationController
 
   def update
     blog = Blog.find(params[:id])
+  end
+
+  def update
+    blog = Blog.find(params[:id])
+    blog.update(blog_params)
   end
 
   private

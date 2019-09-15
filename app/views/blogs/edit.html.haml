@@ -1,6 +1,5 @@
 .contents.row
-  -# = form_tag("/blogs/#{@blog.id}", method: :patch ) do
-  = form_for [@user] do |f|
+  = form_tag("/blogs/#{@blog.id}", method: :patch ) do
     %h3
       編集する
     %input{:type => "text"}/
